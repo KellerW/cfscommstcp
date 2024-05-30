@@ -1,0 +1,6 @@
+/home/wagner/work/cfscommstcp/build/CMakeFiles/CFSCOMMSTCP.dir
+/home/wagner/work/cfscommstcp/build/CMakeFiles/edit_cache.dir
+/home/wagner/work/cfscommstcp/build/CMakeFiles/rebuild_cache.dir
+/home/wagner/work/cfscommstcp/build/src/CMakeFiles/tcpepoll.dir
+/home/wagner/work/cfscommstcp/build/src/CMakeFiles/edit_cache.dir
+/home/wagner/work/cfscommstcp/build/src/CMakeFiles/rebuild_cache.dir

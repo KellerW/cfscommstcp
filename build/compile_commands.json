@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/wagner/work/cfscommstcp/build",
+  "command": "/usr/bin/gcc  -I/home/wagner/work/cfscommstcp/src/. -g -o CMakeFiles/CFSCOMMSTCP.dir/main.c.o -c /home/wagner/work/cfscommstcp/main.c",
+  "file": "/home/wagner/work/cfscommstcp/main.c",
+  "output": "CMakeFiles/CFSCOMMSTCP.dir/main.c.o"
+},
+{
+  "directory": "/home/wagner/work/cfscommstcp/build/src",
+  "command": "/usr/bin/gcc  -I/home/wagner/work/cfscommstcp/src/. -g -o CMakeFiles/tcpepoll.dir/tcp_epoll.c.o -c /home/wagner/work/cfscommstcp/src/tcp_epoll.c",
+  "file": "/home/wagner/work/cfscommstcp/src/tcp_epoll.c",
+  "output": "src/CMakeFiles/tcpepoll.dir/tcp_epoll.c.o"
+},
+{
+  "directory": "/home/wagner/work/cfscommstcp/build/src",
+  "command": "/usr/bin/gcc  -I/home/wagner/work/cfscommstcp/src/. -g -o CMakeFiles/tcpepoll.dir/tcp_network.c.o -c /home/wagner/work/cfscommstcp/src/tcp_network.c",
+  "file": "/home/wagner/work/cfscommstcp/src/tcp_network.c",
+  "output": "src/CMakeFiles/tcpepoll.dir/tcp_network.c.o"
+},
+{
+  "directory": "/home/wagner/work/cfscommstcp/build/src",
+  "command": "/usr/bin/gcc  -I/home/wagner/work/cfscommstcp/src/. -g -o CMakeFiles/tcpepoll.dir/utils.c.o -c /home/wagner/work/cfscommstcp/src/utils.c",
+  "file": "/home/wagner/work/cfscommstcp/src/utils.c",
+  "output": "src/CMakeFiles/tcpepoll.dir/utils.c.o"
+},
+{
+  "directory": "/home/wagner/work/cfscommstcp/build/src",
+  "command": "/usr/bin/gcc  -I/home/wagner/work/cfscommstcp/src/. -g -o CMakeFiles/tcpepoll.dir/event_mgnt.c.o -c /home/wagner/work/cfscommstcp/src/event_mgnt.c",
+  "file": "/home/wagner/work/cfscommstcp/src/event_mgnt.c",
+  "output": "src/CMakeFiles/tcpepoll.dir/event_mgnt.c.o"
+},
+{
+  "directory": "/home/wagner/work/cfscommstcp/build/src",
+  "command": "/usr/bin/gcc  -I/home/wagner/work/cfscommstcp/src/. -g -o CMakeFiles/tcpepoll.dir/state_mgnt.c.o -c /home/wagner/work/cfscommstcp/src/state_mgnt.c",
+  "file": "/home/wagner/work/cfscommstcp/src/state_mgnt.c",
+  "output": "src/CMakeFiles/tcpepoll.dir/state_mgnt.c.o"
+}
+]

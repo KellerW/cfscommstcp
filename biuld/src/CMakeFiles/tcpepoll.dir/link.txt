@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtcpepoll.a CMakeFiles/tcpepoll.dir/tcp_epoll.c.o CMakeFiles/tcpepoll.dir/tcp_network.c.o CMakeFiles/tcpepoll.dir/utils.c.o CMakeFiles/tcpepoll.dir/event_mgnt.c.o CMakeFiles/tcpepoll.dir/state_mgnt.c.o
+/usr/bin/ranlib libtcpepoll.a

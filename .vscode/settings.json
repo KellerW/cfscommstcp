@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "string.h": "c",
+        "cerrno": "cpp",
+        "tcp_constants.h": "c",
+        "tcp_network.h": "c",
+        "event_mgnt.h": "c"
+    }
+}
