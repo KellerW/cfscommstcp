@@ -9,20 +9,27 @@
 #include "state_mgnt.h"
 int main (int argc, char* argv)
 {
+       
     int ret;
     struct tcp_state state;
 
+    const char* config_file = "/home/wagner/work/cfscommstcp/config.txt";
+    int port = read_config_port(config_file);
+    if (port > 0) {
+        printf("Port number read from file: %d\n", port);
+    } else {
+        printf("Failed to read a valid port number from the file\n");
+    }
+    
     init_state(&state);
 
     ret = init_epoll(&state);
     if (ret != 0)
         goto out;
 
-
     ret = init_socket(&state);
     if (ret != 0)
         goto out;
-
 
     state.stop = false;
 

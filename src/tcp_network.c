@@ -66,8 +66,7 @@ int accept_new_client(int tcp_fd, struct tcp_state *state)
             my_epoll_add(state->epoll_fd, client_fd, EPOLLIN | EPOLLPRI);
 
             //printf("Client %s:%u has been accepted!\n", src_ip, src_port);
-            printf("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>");
-            printf("Client :%u has been accepted!\n", src_port);
+            //printf("Client :%u has been accepted!\n", src_port);
             return 0;
         }
     }
@@ -78,7 +77,7 @@ out_close:
     close(client_fd);
     return 0;
 }
-
+                            
 void handle_client_event(int client_fd, uint32_t revents,
                                 struct tcp_state *state)
 {
@@ -91,38 +90,9 @@ void handle_client_event(int client_fd, uint32_t revents,
      */
     uint32_t index = state->client_map[client_fd] - EPOLL_MAP_SHIFT;
     struct client_slot *client = &state->clients[index];
-
+   
     if (revents & err_mask)
         goto close_conn;
-
-    recv_ret = recv(client_fd, buffer, sizeof(buffer), 0);
-    if (recv_ret == 0)
-        goto close_conn;
-
-    if (recv_ret < 0) {
-        err = errno;
-        if (err == EAGAIN)
-            return;
-
-        /* Error */
-        printf("recv(): " PRERF, PREAR(err));
-        goto close_conn;
-    }
-
-
-    /*
-     * Safe printing
-     */
-    buffer[recv_ret] = '\0';
-    if (buffer[recv_ret - 1] == '\n') {
-        buffer[recv_ret - 1] = '\0';
-    }
-
-    printf("Client %s:%u sends: \"%s\"\n", client->src_ip, client->src_port,
-           buffer);
-    return;
-
-
 close_conn:
     printf("Client %s:%u has closed its connection\n", client->src_ip,
            client->src_port);
@@ -190,3 +160,38 @@ out:
     close(tcp_fd);
     return ret;
 }
+
+void handle_receive(int client_fd, struct tcp_state * state)
+{
+    ssize_t recv_ret;
+    char buffer[1024];
+    uint32_t index = state->client_map[client_fd] - EPOLL_MAP_SHIFT;
+    struct client_slot *client = &state->clients[index];
+
+    recv_ret = recv(client_fd, buffer, sizeof(buffer), 0);
+    buffer[recv_ret] = '\0';
+    if (buffer[recv_ret - 1] == '\n') 
+    {
+        buffer[recv_ret - 1] = '\0';
+    }
+    printf("Client %s:%u sends: \"%s\"\n", client->src_ip, client->src_port,
+        buffer);
+    return;
+}
+
+void handle_send(int client_fd, struct tcp_state *state) 
+{
+    ssize_t bytes_sent;
+    //char buffer[1024];
+    //buffer[0] = '0';
+    const char *data = "Hello, client!";
+        //bytes_sent = send(client_fd, buffer, sizeof(buffer), 0);
+        bytes_sent = send(client_fd, data, strlen(data), 0);
+        
+        if (bytes_sent < 0) 
+        {
+            perror("Failed to send");
+        }
+      //  check_and_update_epoll_interests(client_fd, &state);
+    
+}     

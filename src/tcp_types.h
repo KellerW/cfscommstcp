@@ -26,6 +26,8 @@ struct client_slot {
 
 struct tcp_state {
     bool stop;
+    bool is_ready_to_send;
+    const char *data;
     int tcp_fd;
     int epoll_fd;
     uint16_t client_c;

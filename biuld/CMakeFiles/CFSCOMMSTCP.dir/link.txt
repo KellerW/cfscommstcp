@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/CFSCOMMSTCP.dir/main.c.o -o CFSCOMMSTCP  src/libtcpepoll.a

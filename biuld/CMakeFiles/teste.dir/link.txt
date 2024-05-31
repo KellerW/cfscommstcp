@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/teste.dir/main.c.o -o teste  src/libtcpepoll.a

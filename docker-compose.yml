@@ -1,0 +1,47 @@
+version: '3'
+services:
+  cpp_app1:
+    build: .
+    ports:
+      - "8081:8080"
+    networks:
+      - my_network
+    container_name: cpp_app1
+    environment:
+      - APP_PORT=8080
+      - PEER1_HOST=cpp_app2
+      - PEER1_PORT=8080
+      - PEER2_HOST=cpp_app3
+      - PEER2_PORT=8080
+
+  cpp_app2:
+    build: .
+    ports:
+      - "8082:8080"
+    networks:
+      - my_network
+    container_name: cpp_app2
+    environment:
+      - APP_PORT=8080
+      - PEER1_HOST=cpp_app1
+      - PEER1_PORT=8080
+      - PEER2_HOST=cpp_app3
+      - PEER2_PORT=8080
+
+  cpp_app3:
+    build: .
+    ports:
+      - "8083:8080"
+    networks:
+      - my_network
+    container_name: cpp_app3
+    environment:
+      - APP_PORT=8080
+      - PEER1_HOST=cpp_app1
+      - PEER1_PORT=8080
+      - PEER2_HOST=cpp_app2
+      - PEER2_PORT=8080
+
+networks:
+  my_network:
+    driver: bridge

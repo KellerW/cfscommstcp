@@ -91,5 +91,8 @@ CMakeFiles/CFSCOMMSTCP.dir/main.c.o: /home/wagner/work/cfscommstcp/main.c \
  /home/wagner/work/cfscommstcp/src/./tcp_types.h \
  /home/wagner/work/cfscommstcp/src/./tcp_network.h \
  /home/wagner/work/cfscommstcp/src/./state_mgnt.h \
- /home/wagner/work/cfscommstcp/src/./utils.h \
+ /home/wagner/work/cfscommstcp/src/./utils.h /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
  /home/wagner/work/cfscommstcp/src/./tcp_constants.h
